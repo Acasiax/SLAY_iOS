@@ -147,8 +147,14 @@ struct PlanetDetailView: View {
                     
                     Spacer(minLength: 0)
                     
-                    Button(action: {}) {
-                        
+//                    Button(action: {
+//                        //planetData.'
+//                        fashionShowListChannel[6].youtubeURL
+//                        
+//                    }) 
+                    Link(destination: URL(string:planetData.planetMainURL)!)
+                    {
+                      
                         Text("자세히 보기")
                             .font(.title2)
                             .fontWeight(.bold)

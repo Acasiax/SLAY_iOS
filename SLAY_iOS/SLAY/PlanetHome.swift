@@ -201,35 +201,35 @@ struct PlanetHome: View {
                         }
                         //아이디어 제안 패딩
                        // .padding()
-                            Spacer()
+                          //  Spacer()
                        
                         
-                        HStack{
-                            Text("Planet History")
-                                .font(.title)
-                                .fontWeight(.heavy)
-                                .foregroundColor(.red)
-                            
-                            Spacer()
-                        }
-                        .padding(.horizontal)
+//                        HStack{
+//                            Text("Planet History")
+//                                .font(.title)
+//                                .fontWeight(.heavy)
+//                                .foregroundColor(.red)
+//                            
+//                            Spacer()
+//                        }
+//                        .padding(.horizontal)
                         //60으로 변경했더니 women이 밑으로 잘 내려왔음
                        // .padding(.top,60)
-                        .padding(.bottom,10)
+                    //    .padding(.bottom,10)
                         
-                        ScrollView(.horizontal, showsIndicators: false, content: {
-                            
-                            HStack(spacing: 15){
-                                ForEach(planetscroll_Tabs, id: \.self){tab in
-                                    //탭 버튼
-                                  
-                                    PlanetTapButton(title: tab, selectedTab: $selectedTab, animation: animation)
-                                }
-                            }
-                            .padding(.horizontal)
-                           // .padding(.top,10)
-                        })
-                        
+//                        ScrollView(.horizontal, showsIndicators: false, content: {
+//                            
+//                            HStack(spacing: 15){
+//                                ForEach(planetscroll_Tabs, id: \.self){tab in
+//                                    //탭 버튼
+//                                  
+//                                    PlanetTapButton(title: tab, selectedTab: $selectedTab, animation: animation)
+//                                }
+//                            }
+//                            .padding(.horizontal)
+//                           // .padding(.top,10)
+//                        })
+//                        
                         LazyVGrid(columns: Array(repeating: GridItem(.flexible(),spacing: 30), count: 2),spacing: -5){
                             ForEach(filteredItemsFirstHome){planet in
                                 
