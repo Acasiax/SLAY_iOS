@@ -32,33 +32,33 @@ struct Album: Identifiable{
 //Chanel Slay Show
 
 var albums: [Album] = [
-    Album( albumImage: "GUCCI Slay Show 1", albumShowTitle: fashionShowListGucci[0].showTitle, artistImage: "버버리-리카르도티시", artistName: "마르켈리아", badge: true, year: "2020 ", date: " 0309", songs: 0, time: "12시20분 ", copyright: " 공공공", youtubeID: brands[0].fashionShows[0].youtubeID, youtubeURL: "https://www.youtube.com/live/rIUdA21wEPc?feature=share", showDetail: brands[1].fashionShows[0].showDetail),
+    Album( albumImage: "GUCCI Slay Show 1", albumShowTitle: fashionShowListGucci[0].showTitle, artistImage: "버버리-리카르도티시", artistName: "마르켈리아", badge: true, year: "2020 ", date: " 0309", songs: 0, time: "12시20분 ", copyright: " 공공공", youtubeID: brands[0].fashionShows[0].youtubeID, youtubeURL: fashionShowListGucci[0].youtubeURL, showDetail:fashionShowListGucci[0].showDetail),
 
-    Album(albumImage: "GUCCI Slay Show 1", albumShowTitle: fashionShowListGucci[1].showTitle, artistImage: "버버리-리카르도티시", artistName: "마르켈리아", badge: true, year: "2020 ", date: " 0309", songs: 0, time: "12시20분 ", copyright: " 공공공", youtubeID: "", youtubeURL: "https://www.youtube.com/live/lkvsiTD3bF4?feature=share", showDetail: brands[1].fashionShows[1].showDetail),
+    Album(albumImage: "GUCCI Slay Show 1", albumShowTitle: fashionShowListGucci[1].showTitle, artistImage: "버버리-리카르도티시", artistName: "마르켈리아", badge: true, year: "2020 ", date: " 0309", songs: 0, time: "12시20분 ", copyright: " 공공공", youtubeID: "", youtubeURL: fashionShowListGucci[1].youtubeURL, showDetail: fashionShowListGucci[1].showDetail),
 
 
-    Album(albumImage: "GUCCI Slay Show 1", albumShowTitle: fashionShowListGucci[1].showTitle, artistImage: "samplemonvie1", artistName: " 마르켈리아", badge: true, year: "2020 ", date: " 0311", songs: 1, time: "12시20분 ", copyright: " 공공공", youtubeID: "", youtubeURL: "https://www.youtube.com/live/Wr4w5i1xFEo?feature=share", showDetail: "")
+    Album(albumImage: "GUCCI Slay Show 1", albumShowTitle: fashionShowListGucci[2].showTitle, artistImage: "samplemonvie1", artistName: " 마르켈리아", badge: true, year: "2020 ", date: " 0311", songs: 1, time: "12시20분 ", copyright: " 공공공", youtubeID: "", youtubeURL: fashionShowListGucci[2].youtubeURL, showDetail: fashionShowListGucci[2].showDetail)
 
 ]
 
 
 var albums6COLOR: [Album] = [
     
-    Album(albumImage: "GUCCI Slay Show 1", albumShowTitle: fashionShowListGucci[0].showTitle, artistImage: "버버리-리카르도티시", artistName: "마르켈리아", badge: true, year: "2020 ", date: " 0309", songs: 0, time: "12시20분 ", copyright: " 공공공", youtubeID: "", youtubeURL: "https://www.youtube.com/live/Wr4w5i1xFEo?feature=share", showDetail: brands[1].fashionShows[0].showDetail),
+    Album(albumImage: "GUCCI Slay Show 1", albumShowTitle: fashionShowListGucci[0].showTitle, artistImage: "버버리-리카르도티시", artistName: "마르켈리아", badge: true, year: "2020 ", date: " 0309", songs: 0, time: "12시20분 ", copyright: " 공공공", youtubeID: "", youtubeURL: fashionShowListGucci[0].youtubeURL, showDetail: fashionShowListGucci[0].showDetail),
 
     
     
-    Album( albumImage: "Chanel Slay Show", albumShowTitle: fashionShowListChannel[0].showTitle, artistImage: "버버리-리카르도티시", artistName: "마르켈리아", badge: true, year: "2020 ", date: " 0309", songs: 0, time: "12시20분 ", copyright: " 공공공", youtubeID: brands[0].fashionShows[0].youtubeID, youtubeURL: "https://www.youtube.com/live/rIUdA21wEPc?feature=share", showDetail: brands[0].fashionShows[0].showDetail),
+    Album( albumImage: "Chanel Slay Show", albumShowTitle: fashionShowListChannel[0].showTitle, artistImage: "버버리-리카르도티시", artistName: "마르켈리아", badge: true, year: "2020 ", date: " 0309", songs: 0, time: "12시20분 ", copyright: " 공공공", youtubeID: brands[0].fashionShows[0].youtubeID, youtubeURL: fashionShowListChannel[0].youtubeURL, showDetail: fashionShowListChannel[0].showDetail),
     
 
-    Album(albumImage: "YSL Slay Show", albumShowTitle: fashionShowListYSL[0].showTitle, artistImage: "버버리-리카르도티시", artistName: " 마르켈리아", badge: true, year: "2020 ", date: " 0310", songs: 1, time: "12시20분 ", copyright: " 공공공", youtubeID: "", youtubeURL: "https://www.youtube.com/live/I2uIi0GT8Qg?feature=share", showDetail: brands[2].fashionShows[0].showDetail),
+    Album(albumImage: "YSL Slay Show", albumShowTitle: fashionShowListYSL[0].showTitle, artistImage: "버버리-리카르도티시", artistName: " 마르켈리아", badge: true, year: "2020 ", date: " 0310", songs: 1, time: "12시20분 ", copyright: " 공공공", youtubeID: "", youtubeURL: fashionShowListYSL[0].youtubeURL, showDetail: brands[2].fashionShows[0].showDetail),
     
     
-    Album(albumImage: "DIOR Slay Show", albumShowTitle: fashionShowListDior[0].showTitle, artistImage: "버버리-리카르도티시", artistName: "마르켈리아", badge: true, year: "2020 ", date: " 0309", songs: 0, time: "12시20분 ", copyright: " 공공공", youtubeID: "", youtubeURL: "https://www.youtube.com/live/ZnS1UMJayoI?feature=share", showDetail: brands[3].fashionShows[0].showDetail),
+    Album(albumImage: "DIOR Slay Show", albumShowTitle: fashionShowListDior[0].showTitle, artistImage: "버버리-리카르도티시", artistName: "마르켈리아", badge: true, year: "2020 ", date: " 0309", songs: 0, time: "12시20분 ", copyright: " 공공공", youtubeID: "", youtubeURL: fashionShowListDior[0].youtubeURL, showDetail: brands[3].fashionShows[0].showDetail),
     
-    Album(albumImage: "PRADA Slay Show", albumShowTitle: fashionShowListPRADA[0].showTitle, artistImage: "버버리-리카르도티시", artistName: "마르켈리아", badge: true, year: "2020 ", date: " 0309", songs: 0, time: "12시20분 ", copyright: " 공공공", youtubeID: "", youtubeURL: "https://www.youtube.com/live/BGWhB8dOKhc?feature=share", showDetail: brands[4].fashionShows[0].showDetail),
+    Album(albumImage: "PRADA Slay Show", albumShowTitle: fashionShowListPRADA[0].showTitle, artistImage: "버버리-리카르도티시", artistName: "마르켈리아", badge: true, year: "2020 ", date: " 0309", songs: 0, time: "12시20분 ", copyright: " 공공공", youtubeID: "", youtubeURL: fashionShowListPRADA[0].youtubeURL, showDetail: brands[4].fashionShows[0].showDetail),
     
-    Album(albumImage: "Burberry Slay Show", albumShowTitle: fashionShowListBURBERRY[0].showTitle, artistImage: "버버리-리카르도티시", artistName: "마르켈리아", badge: true, year: "2020 ", date: " 0309", songs: 0, time: "12시20분 ", copyright: " 공공공", youtubeID: "", youtubeURL: "https://www.youtube.com/live/jvR4lRIBZtA?feature=share", showDetail: brands[5].fashionShows[0].showDetail),
+    Album(albumImage: "Burberry Slay Show", albumShowTitle: fashionShowListBURBERRY[0].showTitle, artistImage: "버버리-리카르도티시", artistName: "마르켈리아", badge: true, year: "2020 ", date: " 0309", songs: 0, time: "12시20분 ", copyright: " 공공공", youtubeID: "", youtubeURL:fashionShowListBURBERRY[0].youtubeURL, showDetail: fashionShowListBURBERRY[0].showDetail),
     
 
 ]
