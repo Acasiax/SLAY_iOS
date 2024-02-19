@@ -30,7 +30,7 @@ struct HomeViewW: View {
 //                    LinearGradient(gradient: Gradient(stops: [.init(color: .gray, location: 0.0),.init(color: .black, location: 0.25),.init(color: .black, location: 0.6)]), startPoint: .topLeading, endPoint: .bottomTrailing)
 //                        .ignoresSafeArea(.all)
                     VStack(alignment: .center){
-                        Spacer(minLength: 10)
+                     //   Spacer(minLength: 10)
                         HStack{
                           
                             Text("Have a wonderful day !")

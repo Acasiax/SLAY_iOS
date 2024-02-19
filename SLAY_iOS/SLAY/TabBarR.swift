@@ -23,15 +23,16 @@ struct TabBarR: View {
                 case .home:
                     //ContentView()
                     PlanetHome(data: brands)
+                  
                 case .explore:
                  
                    // HomeView(mainAlbums: albums[0], mainPodcasts: albums[0], isledessts: albums[0])
                     
                     HomeViewW(mainAlbums: albums[0], mainPodcasts: albums[0], isledessts: albums[0], selectedBrand: $selectedBrand, selectedYoutube: $selectedYoutube)
                     
-                case .notifications:
-                    HomeProductsHero()
-                case .library:
+//                case .librarys:
+//                    HomeProductsHero()
+                case .setting:
                     SettingsView()
                    // AccountView()
                 }
@@ -69,31 +70,33 @@ struct TabBarR: View {
             RoundedRectangle(cornerRadius: 34, style: .continuous))
             .background(
                 HStack{
-                    if selectedTab == .library { Spacer() }
+                    if selectedTab == .setting { Spacer() }
                     if selectedTab == .explore { Spacer() }
-                    if selectedTab == .notifications {
-                        Spacer()
-                        Spacer()
-                    }
+//                    if selectedTab == .librarys {
+//                        Spacer()
+//                        Spacer()
+//                    }
                     
                     Circle().fill(color).frame(width: 88)
                     if selectedTab == .home { Spacer()}
                     if selectedTab == .explore {
                         Spacer()
-                        Spacer()
+                       
                     }
-                    if selectedTab == .notifications { Spacer() }
+                    //if selectedTab == .librarys { Spacer() }
                 }
-                    .padding(.horizontal, 8)
+                    .padding(.horizontal, 28)
             )
             .overlay(
                 HStack{
-                    if selectedTab == .library { Spacer() }
-                    if selectedTab == .explore { Spacer() }
-                    if selectedTab == .notifications {
-                        Spacer()
+                    if selectedTab == .setting { Spacer() }
+                    if selectedTab == .explore { Spacer()
                         Spacer()
                     }
+//                    if selectedTab == .librarys {
+//                        Spacer()
+//                        Spacer()
+//                    }
                     
                     Rectangle()
                         .fill(color)
@@ -106,9 +109,9 @@ struct TabBarR: View {
                         Spacer()
                         Spacer()
                     }
-                    if selectedTab == .notifications { Spacer() }
+                   // if selectedTab == .librarys { Spacer() }
                 }
-                    .padding(.horizontal, 8)
+                    .padding(.horizontal, 28)
             )
             
             
