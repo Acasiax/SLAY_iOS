@@ -40,7 +40,7 @@ struct PlanetDetailView: View {
                                 .padding(.top)
                         }
                         
-                        Text("오로라 행성")
+                        Text("SLAY 행성")
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                         
@@ -54,13 +54,13 @@ struct PlanetDetailView: View {
                     
                     Spacer(minLength: 0)
                     Spacer()
-                    Button(action: {}) {
-                        
-                        Image(systemName: "heart")
-                            .font(.title)
-                            .foregroundColor(.white)
-                        
-                    }
+//                    Button(action: {}) {
+//                        
+//                        Image(systemName: "heart")
+//                            .font(.title)
+//                            .foregroundColor(.white)
+//                        
+//                    }
                     
                 }
                 

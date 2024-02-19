@@ -42,7 +42,8 @@ struct Person1: View {
                                 .padding(.vertical,12)
                                 .background{
                                     Capsule()
-                                        .fill(Color.green.gradient)
+                                        .fill(Color(uiColor: UIColor(red: 0.48, green: 0.00, blue: 0.27, alpha: 1.00)).gradient)
+                                    // .fill(Color.purple.gradient)
                                 }
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -225,26 +226,26 @@ struct Person1: View {
                 
                 Spacer(minLength: 0)
                 
-                Button{
-                    
-                } label: {
-                    Text("팔루오")
-                        .font(.caption)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .padding(.horizontal,10)
-                        .padding(.vertical,6)
-                        .border(.white, width: 1.5)
-                }
+//                Button{
+//                    
+//                } label: {
+//                    Text("팔루오")
+//                        .font(.caption)
+//                        .fontWeight(.semibold)
+//                        .foregroundColor(.white)
+//                        .padding(.horizontal,10)
+//                        .padding(.vertical,6)
+//                        .border(.white, width: 1.5)
+//                }
                 .opacity(1 + progress)
                 
-                Button{
-                    
-                } label: {
-                    Image(systemName: "ellipsis")
-                        .font(.title3)
-                        .foregroundColor(.white)
-                }
+//                Button{
+//                    
+//                } label: {
+//                    Image(systemName: "ellipsis")
+//                        .font(.title3)
+//                        .foregroundColor(.white)
+//                }
             }
             //메인에서 써클눌렀을때 팔로우 헤더 부분이 알맞게 밑으로 내려가게 패딩 넣었음.
             .padding(.top,70)

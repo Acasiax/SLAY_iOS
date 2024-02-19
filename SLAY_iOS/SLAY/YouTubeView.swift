@@ -91,11 +91,12 @@ struct YouTube: View {
                                             .foregroundColor(.white)
                                         // .padding(.top)
                                             .padding(.horizontal)
+                                            
                                     }
                                 }
                                 
-                                .frame(minWidth: 340,maxHeight: 170)
-                                
+                               // .frame(minWidth: 340,maxHeight: 170)
+                                .fixedSize(horizontal: false, vertical: true)
                                 .background(Color.purple.opacity(0.3)
                                     .cornerRadius(15))
                                 
@@ -110,45 +111,45 @@ struct YouTube: View {
                                 //우산
                                 //selectedYoutube = selectedBrand.fashionShows[index]
                                
-                               // let ha = selectedYoutube.mainImages2N {
-                                if let ha = selectedYoutube?.mainImages2N {
-                                    SnapCarousel(spacing: 20, trailingSpace: 180, index: $currentIndex, items: ha) { movie in
-                                        //  ForEach(selectedBrand.fashionShows.indices, id: \.self) {  movie in
-                                        GeometryReader{proxy in
-                                            let size = proxy.size
-                                            
-                                            Image(movie.artworkImage)
-                                            
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fill)
-                                                .frame(width: size.width, height: size.height)
-                                                .cornerRadius(15)
-                                                .matchedGeometryEffect(id: movie.id, in: animation3)
-                                                .onTapGesture {
-                                                    currentCardSize = size
-                                                    
-                                                    detailLookpage = movie
-                                                    print("🔇\(movie.artworkImage)")
-                                                    withAnimation(.easeInOut){
-                                                        
-                                                        //   print("🔴아아아아 \(selectedYoutube)🔹")
-                                                        
-                                                        showLookDetailView = true
-                                                    }
-                                                }
-                                            
-                                        }
-                                        
-                                    }
-                                    //현재 사진은 살짝 더 위로 올라가게 할것임
-                                    //탭바랑 사진 사이의 높이 간격
-                                    .padding(.top,70)
-                                    
-                                    //custom indicator
-                                    CustomIndicator()
-                        //여기 if let 괄호 허ㅏ나 지우기
-                                }
-                                
+                          
+//                                if let ha = selectedYoutube?.mainImages2N {
+//                                    SnapCarousel(spacing: 20, trailingSpace: 180, index: $currentIndex, items: ha) { movie in
+//                                        //  ForEach(selectedBrand.fashionShows.indices, id: \.self) {  movie in
+//                                        GeometryReader{proxy in
+//                                            let size = proxy.size
+//                                            
+//                                            Image(movie.artworkImage)
+//                                            
+//                                                .resizable()
+//                                                .aspectRatio(contentMode: .fill)
+//                                                .frame(width: size.width, height: size.height)
+//                                                .cornerRadius(15)
+//                                                .matchedGeometryEffect(id: movie.id, in: animation3)
+//                                                .onTapGesture {
+//                                                    currentCardSize = size
+//                                                    
+//                                                    detailLookpage = movie
+//                                                    print("🔇\(movie.artworkImage)")
+//                                                    withAnimation(.easeInOut){
+//                                                        
+//                                                        //   print("🔴아아아아 \(selectedYoutube)🔹")
+//                                                        
+//                                                        showLookDetailView = true
+//                                                    }
+//                                                }
+//                                            
+//                                        }
+//                                        
+//                                    }
+//                                    //현재 사진은 살짝 더 위로 올라가게 할것임
+//                                    //탭바랑 사진 사이의 높이 간격
+//                                    .padding(.top,70)
+//                                    
+//                                    //custom indicator
+//                                    CustomIndicator()
+//                        //여기 if let 괄호 허ㅏ나 지우기
+//                                }
+//                                
                             }
                         }
                         .padding(.top)

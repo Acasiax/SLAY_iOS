@@ -46,7 +46,7 @@ struct PlanetHome: View {
                     VStack(spacing: 15){
                        
                         HStack(spacing: 12) {
-                            Image(systemName: "atom").renderingMode(.original).resizable().frame(width: 30, height: 30) .foregroundColor(.purple.opacity(0.7))
+                            Image("작은-로고-001").renderingMode(.original).resizable().frame(width: 30, height: 30) .foregroundColor(.purple.opacity(0.7))
                             
                             Text("SLAY")
                                 .font(.headline)
