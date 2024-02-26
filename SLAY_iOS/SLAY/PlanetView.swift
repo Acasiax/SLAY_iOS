@@ -21,14 +21,18 @@ struct PlanetView: View {
               //  Color(bagData.image)
                     .cornerRadius(115)
                 
-                
+               
                 Image(planetData.image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: UIScreen.main.bounds.width / 3, height: 140)
                    // .padding(20)
                     .matchedGeometryEffect(id: planetData.image, in: animation)
-                
+                Text(planetData.Entitle)
+               // Text("CHANNEL")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
             }
             
             HStack(spacing: 8){

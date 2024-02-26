@@ -16,7 +16,7 @@ struct PlanetHome: View {
     @State var show = false
     @State var selectedPlanet : PlanetModel!
     @State var txt = ""
-    
+    let timer = Timer.publish(every: 2.5, on: .main, in: .common).autoconnect()
     
     //인스타그램 변수
     @State var data: [Brand]
@@ -120,6 +120,7 @@ struct PlanetHome: View {
                                 .padding(.horizontal)
                                 
                                 //아티스트 카데고리
+                                
                               //  ArtistCircle(data: brands)
                                 ZStack{
                                     
@@ -191,6 +192,7 @@ struct PlanetHome: View {
                                         }
                                     }
                                 }
+                                
 
                                 .background(Color.clear)
                                 //인스타뷰 전체 가로 배경

@@ -16,57 +16,6 @@ struct NoticeView: View {
     }
 }
 
-//struct AutoScroller: View {
-//    var imageNames: [String]
-//    let timer = Timer.publish(every: 2.5, on: .main, in: .common).autoconnect()
-//    
-//    @State private var selectedImageIndex: Int = 0
-//
-//    var body: some View {
-//        ZStack {
-//            Color.secondary
-//                .ignoresSafeArea()
-//
-//            TabView(selection: $selectedImageIndex) {
-//                ForEach(0..<imageNames.count, id: \.self) { index in
-//                    ZStack(alignment: .topLeading) {
-//                        Image("\(imageNames[index])")
-//                            .resizable()
-//                            .tag(index)
-//                            .aspectRatio(contentMode: .fit)  // 이미지 크기에 따라 적절한 크기로 조정
-//                          //  .frame(width: 350, height: 130)
-//                    }
-//                  //  .background(VisualEffectBlur())
-//                    .shadow(radius: 20)
-//                }
-//            }
-//            
-//            .frame(height: 150)
-//            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-//            .ignoresSafeArea()
-//
-//            HStack {
-//                ForEach(0..<imageNames.count, id: \.self) { index in
-//                    Capsule()
-//                        .fill(Color.white.opacity(selectedImageIndex == index ? 1 : 0.33))
-//                        .frame(width: 15, height: 8)
-//                        .onTapGesture {
-//                            selectedImageIndex = index
-//                        }
-//                }
-//                .offset(y: 90)
-//            }
-//        }
-//        .onReceive(timer) { _ in
-//            withAnimation(.default) {
-//                selectedImageIndex = (selectedImageIndex + 1) % imageNames.count
-//            }
-//        }
-//    }
-//}
-
-
-
 struct AutoScroller: View {
     var imageNames: [String]
     let timer = Timer.publish(every: 2.5, on: .main, in: .common).autoconnect()

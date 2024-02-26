@@ -13,6 +13,7 @@ struct HomeViewW: View {
     var mainPodcasts : Album
     var isledessts : Album
     @State var show = false
+   // @State var selectedFashionShow: FashionShow
     @Binding var selectedBrand: Brand!
     @Binding var selectedYoutube: FashionShow!
     @State var seledctedAlbum : Album!
@@ -55,6 +56,12 @@ struct HomeViewW: View {
                         .padding(.leading,10)
                         
 
+                        
+                        
+                        
+                        
+                        
+                        
                         HStack {
                             
                                Spacer(minLength: 20)
@@ -130,19 +137,10 @@ struct HomeViewW: View {
                             YouTube222(selectedBrand: $selectedBrand, selectedYoutube: $selectedYoutube, seledctedAlbum: $seledctedAlbum)
                             
                                     }
-
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
+ 
                         HStack{
-                            Image(mainAlbums.artistImage)
+//                            Image(mainAlbums.artistImage)
+                            Image("구찌-사바토 데 사르노")
                                 .resizable()
                                 .clipShape(Circle())
                                 .aspectRatio(contentMode: .fit)
@@ -256,8 +254,145 @@ struct HomeViewW: View {
                             .padding(.leading)
                             .padding(.trailing)
                         }
-
-                      
+                        //디올 show 문단 시작
+                        HStack{
+                            Text("Dior show")
+                                .font(.system(size: 25))
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                            Spacer()
+                        }
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(alignment: .top) {
+                                Button(action: {
+                                    // 버튼 클릭 시 실행할 액션을 여기에 추가 //
+                                    show.toggle()
+                                    seledctedAlbum =  albumsDior[0]
+                                    
+                                }) {
+                                    PodList(podcasts: albumsDior[0])
+                                }
+                                
+                                Button(action: {
+                                    show.toggle()
+                                    seledctedAlbum = albumsDior[1]
+                                    
+                                    // 버튼 클릭 시 실행할 액션을 여기에 추가9999
+                                }) {
+                                    PodList(podcasts: albumsDior[1])
+                                }
+                                
+                                Button(action: {
+                                    // 버튼 클릭 시 실행할 액션을 여기에 추가99999
+                                    show.toggle()
+                                    seledctedAlbum =  albumsDior[2]
+                                }) {
+                                    PodList(podcasts: albumsDior[2])
+                                }
+                                
+                                Button(action: {
+                                    // 버튼 클릭 시 실행할 액션을 여기에 추가9999
+                                    show.toggle()
+                                    seledctedAlbum =  albumsDior[3]
+                                }) {
+                                    PodList(podcasts: albumsDior[3])
+                                }
+                                
+                                Button(action: {
+                                    // 버튼 클릭 시 실행할 액션을 여기에 추가
+                                    show.toggle()
+                                    seledctedAlbum =  albumsDior[4]
+                                }) {
+                                    PodList(podcasts: albumsDior[4])
+                                }
+                                
+                            
+                            }
+                            .padding(.leading)
+                            .padding(.trailing)
+                        }
+                        //디올 show 문단 시작
+                        HStack{
+                            Text("Prada show")
+                                .font(.system(size: 25))
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                            Spacer()
+                        }
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(alignment: .top) {
+                                Button(action: {
+                                    // 버튼 클릭 시 실행할 액션을 여기에 추가 //
+                                    show.toggle()
+                                    seledctedAlbum =  albumsPrada[0]
+                                    
+                                }) {
+                                    PodList(podcasts: albumsPrada[0])
+                                }
+                                
+                                Button(action: {
+                                    show.toggle()
+                                    seledctedAlbum = albumsPrada[1]
+                                    
+                                    // 버튼 클릭 시 실행할 액션을 여기에 추가9999
+                                }) {
+                                    PodList(podcasts: albumsPrada[1])
+                                }
+                                
+                                Button(action: {
+                                    // 버튼 클릭 시 실행할 액션을 여기에 추가99999
+                                    show.toggle()
+                                    seledctedAlbum =  albumsPrada[2]
+                                }) {
+                                    PodList(podcasts: albumsPrada[2])
+                                }
+                                
+                                Button(action: {
+                                    // 버튼 클릭 시 실행할 액션을 여기에 추가9999
+                                    show.toggle()
+                                    seledctedAlbum =  albumsPrada[3]
+                                }) {
+                                    PodList(podcasts: albumsPrada[3])
+                                }
+                                
+                                Button(action: {
+                                    // 버튼 클릭 시 실행할 액션을 여기에 추가
+                                    show.toggle()
+                                    seledctedAlbum =  albumsPrada[4]
+                                }) {
+                                    PodList(podcasts: albumsPrada[4])
+                                }
+                                
+                            
+                            }
+                            .padding(.leading)
+                            .padding(.trailing)
+                        }
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            LazyHGrid(rows: [GridItem(.flexible(minimum: 200))], spacing: 5) {
+                                ForEach(albums, id: \.id) { album in
+                                        Button(action: {
+                                            withAnimation(.easeIn) {
+                                                
+                                                seledctedAlbum =  album
+//                                                selectedYoutube =  album.youtubeURL
+                                                //album.youtubeID
+    
+                                                show.toggle()
+                                                
+                                                // Handle the button tap here
+                                                print("Tapped on \(album.albumShowTitle)")
+                                            }
+                                        }) {
+                                            AlbumList(albums: album)
+                                        }
+                                    }
+                                }
+                          //  }
+                            .padding(.leading)
+                            .padding(.trailing)
+                        }
+                    
                     }
                     .padding(.bottom,200)
                 }
@@ -269,6 +404,8 @@ struct HomeViewW: View {
 
 struct HomeViewW_Previews: PreviewProvider {
     static var previews: some View {
-        HomeViewW(mainAlbums: albums[0], mainPodcasts: albums[0], isledessts: albums[0], selectedBrand: .constant(nil), selectedYoutube: .constant(nil))
+        HomeViewW(mainAlbums: albums[0], mainPodcasts: albums[0], isledessts: albums[0],  selectedBrand: .constant(nil), selectedYoutube: .constant(nil))
     }
 }
+
+

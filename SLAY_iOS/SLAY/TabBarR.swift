@@ -22,7 +22,8 @@ struct TabBarR: View {
                 switch selectedTab {
                 case .home:
                     //ContentView()
-                    PlanetHome(data: brands)
+                   PlanetHome(data: brands)
+                    
                   
                 case .explore:
                  
