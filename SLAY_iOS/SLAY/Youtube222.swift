@@ -10,10 +10,11 @@ import WebKit
 
 struct YouTube222: View {
     @Environment(\.presentationMode) var presentationMode // 추가
+    @Binding var selectedFashionShow: FashionShow!
     @State var selectedBrandShowList: BrandShowList!
     @Binding var selectedBrand: Brand!
     @Binding var selectedYoutube: FashionShow!
-    @Binding var seledctedAlbum : Album!
+    //@Binding var seledctedAlbum : Album!
     //    //애미메이션 뷰 프러퍼티들
     @State var currentIndex: Int = 0
     @State var currentTab: String = "Films"
@@ -30,49 +31,50 @@ struct YouTube222: View {
         NavigationView { // NavigationView로 감싸기
         //    ScrollView{
                
-                ZStack(alignment: .top) {
-                    // 배경색
-                    
-                   Color.black.opacity(0.9).edgesIgnoringSafeArea(.all)
-                    //👀
-                    BGView().preferredColorScheme(.dark)
-                  //  Color.clear.edgesIgnoringSafeArea(.all)
-                    VStack{
-                        VStack {
+            ZStack(alignment: .top) {
+                // 배경색
+                
+                Color.black.opacity(0.9).edgesIgnoringSafeArea(.all)
+                //👀
+                BGView().preferredColorScheme(.dark)
+                //  Color.clear.edgesIgnoringSafeArea(.all)
+                VStack{
+                    VStack {
+                        
+                        //                            if let selectedYoutube2 = seledctedAlbum?.youtubeID{
+                        if let fashionShow = selectedFashionShow?.youtubeID {
                             
-                            if let selectedYoutube2 = seledctedAlbum?.youtubeID{
-                                // if let fashionShow = selectedBrand?.youtubeID {
-                                
-                                //VideoView22(videoID: selectedYoutube2, selectedBrand: $selectedBrand, selectedYoutube: $selectedYoutube, seledctedAlbum: $seledctedAlbum)
-                                
-                                VideoView22(videoID: seledctedAlbum.youtubeID, selectedBrand: $selectedBrand, selectedYoutube: $selectedYoutube, seledctedAlbum: $seledctedAlbum)
-                                
-                                
+                            //VideoView22(videoID: selectedYoutube2, selectedBrand: $selectedBrand, selectedYoutube: $selectedYoutube, seledctedAlbum: $seledctedAlbum)
+                            
+                            VideoView22(videoID: selectedFashionShow.youtubeID, selectedFashionShow: $selectedFashionShow, selectedBrand: $selectedBrand, selectedYoutube: $selectedYoutube)
+                            
+                            
                         } else {
-                                Text("YouTube ID의 주소를 알 수 없습니다.")
-                                    .foregroundColor(.yellow)
-                            }
-                            
+                            Text("YouTube ID의 주소를 알 수 없습니다.")
+                                .foregroundColor(.yellow)
                         }
-                        .frame(minHeight: 0, maxHeight: UIScreen.main.bounds.height * 0.2)
-                        .cornerRadius(12)
-                        .padding(.horizontal, 5)
                         
-                        
-                        
-                        //🔴
+                    }
+                    .frame(minHeight: 0, maxHeight: UIScreen.main.bounds.height * 0.28)
+                    .cornerRadius(12)
+                    .padding(.horizontal, 5)
+                    
+                    
+                    
+                    //🔴
+                    ScrollView{
                         VStack{
                             
                             Text("소개")
                                 .font(.title2)
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
-       
+                            
                             VStack{
                                 ScrollView(.vertical){
                                     
                                     //  GeometryReader { geometry in
-                                    if let selectedYoutube3 = seledctedAlbum {
+                                    if let selectedYoutube3 = selectedFashionShow {
                                         Text("\(selectedYoutube3.showDetail)")
                                             .multilineTextAlignment(.center)
                                             .foregroundColor(.white)
@@ -93,56 +95,56 @@ struct YouTube222: View {
                                     }
                                 }
                                 
-                             //   .frame(minWidth: 340,maxHeight: 170)
+                                //   .frame(minWidth: 340,maxHeight: 170)
                                 .fixedSize(horizontal: false, vertical: true)
                                 .background(Color.purple.opacity(0.3)
                                     .cornerRadius(15))
                                 
                             }
-               
+                            
                             VStack{
                                 
                                 //🔴옷 표지 이미지!!!!
                                 
-                         
-//                                if let ha = selectedYoutube?.mainImages2N {
-//                                    SnapCarousel(spacing: 20, trailingSpace: 180, index: $currentIndex, items: ha) { movie in
-//                                        //  ForEach(selectedBrand.fashionShows.indices, id: \.self) {  movie in
-//                                        GeometryReader{proxy in
-//                                            let size = proxy.size
-//                                            
-////                                            Image(movie.artworkImage)
-//                                            Image(movie.artworkImage)
-//                                            
-//                                                .resizable()
-//                                                .aspectRatio(contentMode: .fill)
-//                                                .frame(width: size.width, height: size.height)
-//                                                .cornerRadius(15)
-//                                                .matchedGeometryEffect(id: movie.id, in: animation3)
-//                                                .onTapGesture {
-//                                                    currentCardSize = size
-//                                                    
-//                                                    detailLookpage = movie
-//                                                    print("🔇\(movie.artworkImage)")
-//                                                    withAnimation(.easeInOut){
-//                                                        
-//                                                        //   print("🔴아아아아 \(selectedYoutube)🔹")
-//                                                        
-//                                                        showLookDetailView = true
-//                                                    }
-//                                                }
-//                                            
-//                                        }
-//                                        
-//                                    }
-//                                    //현재 사진은 살짝 더 위로 올라가게 할것임
-//                                    //탭바랑 사진 사이의 높이 간격
-//                                    .padding(.top,70)
-//                                    
-//                                    //custom indicator
-//                                    CustomIndicator()
-//                        //여기 if let 괄호 허ㅏ나 지우기
-//                                }
+                                
+                                //                                if let ha = selectedYoutube?.mainImages2N {
+                                //                                    SnapCarousel(spacing: 20, trailingSpace: 180, index: $currentIndex, items: ha) { movie in
+                                //                                        //  ForEach(selectedBrand.fashionShows.indices, id: \.self) {  movie in
+                                //                                        GeometryReader{proxy in
+                                //                                            let size = proxy.size
+                                //
+                                ////                                            Image(movie.artworkImage)
+                                //                                            Image(movie.artworkImage)
+                                //
+                                //                                                .resizable()
+                                //                                                .aspectRatio(contentMode: .fill)
+                                //                                                .frame(width: size.width, height: size.height)
+                                //                                                .cornerRadius(15)
+                                //                                                .matchedGeometryEffect(id: movie.id, in: animation3)
+                                //                                                .onTapGesture {
+                                //                                                    currentCardSize = size
+                                //
+                                //                                                    detailLookpage = movie
+                                //                                                    print("🔇\(movie.artworkImage)")
+                                //                                                    withAnimation(.easeInOut){
+                                //
+                                //                                                        //   print("🔴아아아아 \(selectedYoutube)🔹")
+                                //
+                                //                                                        showLookDetailView = true
+                                //                                                    }
+                                //                                                }
+                                //
+                                //                                        }
+                                //
+                                //                                    }
+                                //                                    //현재 사진은 살짝 더 위로 올라가게 할것임
+                                //                                    //탭바랑 사진 사이의 높이 간격
+                                //                                    .padding(.top,70)
+                                //
+                                //                                    //custom indicator
+                                //                                    CustomIndicator()
+                                //                        //여기 if let 괄호 허ㅏ나 지우기
+                                //                                }
                                 
                             }
                         }
@@ -150,7 +152,7 @@ struct YouTube222: View {
                         .padding(.horizontal)
                     }
                 }
-                
+            }
                 .navigationBarTitle("SLAY", displayMode: .inline)
                 // 타이틀 추가
                 .navigationBarColor(backgroundColor: .clear, titleColor: .purple)
@@ -251,7 +253,7 @@ struct YouTube222: View {
 
 struct youtuve222_Previews: PreviewProvider {
     static var previews: some View {
-        YouTube222(selectedBrand: .constant(nil), selectedYoutube: .constant(nil), seledctedAlbum: .constant(nil) )
+        YouTube222( selectedFashionShow:.constant(nil), selectedBrand: .constant(nil), selectedYoutube: .constant(nil) )
     }
 }
 
@@ -302,16 +304,18 @@ extension View {
 
 struct VideoView22: UIViewRepresentable {
     let videoID: String
+    @Binding var selectedFashionShow: FashionShow!
     @Binding var selectedBrand: Brand!
     @Binding var selectedYoutube: FashionShow!
-    @Binding var seledctedAlbum : Album!
+  //  @Binding var seledctedAlbum : Album!
     func makeUIView(context: Context) -> WKWebView {
         return WKWebView()
     }
 
     func updateUIView(_ uiView: WKWebView, context: Context) {
-       // guard let youtubeURL = URL(string: "\(selectedBrand.youtubeURL)") else { return }
-        guard let youtubeURL = URL(string: "\(seledctedAlbum.youtubeURL)") else { return }
+   
+//        guard let youtubeURL = URL(string: "\(seledctedAlbum.youtubeURL)") else { return }
+        guard let youtubeURL = URL(string: "\(selectedFashionShow.youtubeURL)") else { return }
         uiView.scrollView.isScrollEnabled = false
 //🥶
         DispatchQueue.main.async {

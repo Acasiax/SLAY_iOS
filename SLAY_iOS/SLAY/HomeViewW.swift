@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct HomeViewW: View {
-    
+    @State var selectedFashionShow: FashionShow!
     var mainAlbums : Album
     var mainPodcasts : Album
     var isledessts : Album
     @State var show = false
-   // @State var selectedFashionShow: FashionShow
+   
     @Binding var selectedBrand: Brand!
     @Binding var selectedYoutube: FashionShow!
     @State var seledctedAlbum : Album!
@@ -134,10 +134,82 @@ struct HomeViewW: View {
                            }
                         
                         .fullScreenCover(isPresented: $show) {
-                            YouTube222(selectedBrand: $selectedBrand, selectedYoutube: $selectedYoutube, seledctedAlbum: $seledctedAlbum)
+                            YouTube222(selectedFashionShow: $selectedFashionShow, selectedBrand: $selectedBrand, selectedYoutube: $selectedYoutube)
                             
                                     }
- 
+                       
+                        HStack{
+                            Text("CHANEL show")
+                                .padding(.leading,10)
+                                .font(.system(size: 25))
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                            Spacer()
+                               
+                        } .padding(.bottom,-10)
+                            .padding(.top,30)
+                        HStack{
+//                            Image(mainAlbums.artistImage)
+                            Image("버지니비아르.보그코리아")
+                                .resizable()
+                                .clipShape(Circle())
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 70)
+                            VStack(alignment: .leading){
+                                Text("MORE LIKE")
+                                    .font(.system(size:10))
+                                    .tracking(1)
+                                    .foregroundColor(.white)
+                                    .font(.caption)
+                                
+                                Text("버지니 비아르")
+                              //  Text(mainAlbums.artistName)
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 25))
+                                    .fontWeight(.bold)
+                            }
+                            Spacer()
+                        }
+                        .padding()
+                        .padding(.bottom,-10)
+                        
+                       
+                        // 새로운 배열 ⛑️⛑️⛑️🧯
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            LazyHGrid(rows: [GridItem(.flexible(minimum: 200))], spacing: 5) {
+                                ForEach(fashionShowListChannel, id: \.id) { album000 in
+                                        Button(action: {
+                                            withAnimation(.easeIn) {
+                                                
+                                                selectedFashionShow =  album000
+//                                                selectedYoutube =  album.youtubeURL
+                                                //album.youtubeID
+    
+                                                show.toggle()
+                                                
+                                                // Handle the button tap here
+                                                print("Tapped on \(album000)")
+                                            }
+                                        }) {
+                                            AlbumList000(albums000: album000)
+                                        }
+                                    }
+                                }
+                            .padding(.leading)
+                            .padding(.trailing)
+                           
+                        }
+                        .padding(.bottom,30)
+                        
+                        HStack{
+                            Text("GUCCI show")
+                                .padding(.leading,10)
+                                .font(.system(size: 25))
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                            Spacer()
+                               
+                        } .padding(.bottom,-10)
                         HStack{
 //                            Image(mainAlbums.artistImage)
                             Image("구찌-사바토 데 사르노")
@@ -160,231 +232,271 @@ struct HomeViewW: View {
                         }
                         .padding()
                         .padding(.bottom,-10)
-                        
+                 
                         //정사각형 리스트 구찌
+                        // 새로운 배열 ⛑️⛑️⛑️🧯
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHGrid(rows: [GridItem(.flexible(minimum: 200))], spacing: 5) {
-                                ForEach(albums, id: \.id) { album in
+                                ForEach(fashionShowListGucci, id: \.id) { album000 in
                                         Button(action: {
                                             withAnimation(.easeIn) {
                                                 
-                                                seledctedAlbum =  album
+                                                selectedFashionShow =  album000
 //                                                selectedYoutube =  album.youtubeURL
                                                 //album.youtubeID
     
                                                 show.toggle()
                                                 
                                                 // Handle the button tap here
-                                                print("Tapped on \(album.albumShowTitle)")
+                                                print("Tapped on \(album000)")
                                             }
                                         }) {
-                                            AlbumList(albums: album)
+                                            AlbumList000(albums000: album000)
                                         }
                                     }
                                 }
-                          //  }
                             .padding(.leading)
                             .padding(.trailing)
+                           
                         }
-                    
                         
                         .fullScreenCover(isPresented: $show) {
                          //   YouTube222(selectedBrand: $selectedBrand, selectedYoutube: $selectedYoutube, seledctedAlbum: $seledctedAlbum)
                             
-                                    }
-                        
-                        //Newest show 문단 시작
+                                    }.padding(.bottom,30)
+   
+                       
                         HStack{
-                            Text("Newest show")
+                            Text("DIOR show")
+                                .padding(.leading,10)
                                 .font(.system(size: 25))
                                 .foregroundColor(.white)
                                 .fontWeight(.bold)
+                            Spacer()
+                               
+                        } .padding(.bottom,-10)
+                        HStack{
+//                            Image(mainAlbums.artistImage)
+                            Image("마리아 그라치아 치우리.디올")
+                         //   Image("User1")
+                                .resizable()
+                                .clipShape(Circle())
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50)
+                            VStack(alignment: .leading){
+                                Text("MORE LIKE")
+                                    .font(.system(size:10))
+                                    .tracking(1)
+                                    .foregroundColor(.white)
+                                    .font(.caption)
+                                
+                                Text("마리아 그라치아 치우리")
+                              //  Text(mainAlbums.artistName)
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 25))
+                                    .fontWeight(.bold)
+                            }
                             Spacer()
                         }
                         .padding()
-                        //샤넬 순서대로
-                 
-                        //직사각형 리스트
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(alignment: .top) {
-                                Button(action: {
-                                    // 버튼 클릭 시 실행할 액션을 여기에 추가 //
-                                    show.toggle()
-                                    seledctedAlbum =  albumsChanel[0]
-                                    
-                                }) {
-                                    PodList(podcasts: albumsChanel[0])
-                                }
-                                
-                                Button(action: {
-                                    show.toggle()
-                                    seledctedAlbum =  albumsChanel[1]
-                                    
-                                    // 버튼 클릭 시 실행할 액션을 여기에 추가9999
-                                }) {
-                                    PodList(podcasts: albumsChanel[1])
-                                }
-                                
-                                Button(action: {
-                                    // 버튼 클릭 시 실행할 액션을 여기에 추가99999
-                                    show.toggle()
-                                    seledctedAlbum =  albumsChanel[2]
-                                }) {
-                                    PodList(podcasts: albumsChanel[2])
-                                }
-                                
-                                Button(action: {
-                                    // 버튼 클릭 시 실행할 액션을 여기에 추가9999
-                                    show.toggle()
-                                    seledctedAlbum =  albumsChanel[3]
-                                }) {
-                                    PodList(podcasts: albumsChanel[3])
-                                }
-                                
-                                Button(action: {
-                                    // 버튼 클릭 시 실행할 액션을 여기에 추가
-                                    show.toggle()
-                                    seledctedAlbum =  albumsChanel[4]
-                                }) {
-                                    PodList(podcasts: albumsChanel[4])
-                                }
-                                
-                            
-                            }
-                            .padding(.leading)
-                            .padding(.trailing)
-                        }
+                        .padding(.bottom,-10)
                         //디올 show 문단 시작
-                        HStack{
-                            Text("Dior show")
-                                .font(.system(size: 25))
-                                .foregroundColor(.white)
-                                .fontWeight(.bold)
-                            Spacer()
-                        }
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(alignment: .top) {
-                                Button(action: {
-                                    // 버튼 클릭 시 실행할 액션을 여기에 추가 //
-                                    show.toggle()
-                                    seledctedAlbum =  albumsDior[0]
-                                    
-                                }) {
-                                    PodList(podcasts: albumsDior[0])
-                                }
-                                
-                                Button(action: {
-                                    show.toggle()
-                                    seledctedAlbum = albumsDior[1]
-                                    
-                                    // 버튼 클릭 시 실행할 액션을 여기에 추가9999
-                                }) {
-                                    PodList(podcasts: albumsDior[1])
-                                }
-                                
-                                Button(action: {
-                                    // 버튼 클릭 시 실행할 액션을 여기에 추가99999
-                                    show.toggle()
-                                    seledctedAlbum =  albumsDior[2]
-                                }) {
-                                    PodList(podcasts: albumsDior[2])
-                                }
-                                
-                                Button(action: {
-                                    // 버튼 클릭 시 실행할 액션을 여기에 추가9999
-                                    show.toggle()
-                                    seledctedAlbum =  albumsDior[3]
-                                }) {
-                                    PodList(podcasts: albumsDior[3])
-                                }
-                                
-                                Button(action: {
-                                    // 버튼 클릭 시 실행할 액션을 여기에 추가
-                                    show.toggle()
-                                    seledctedAlbum =  albumsDior[4]
-                                }) {
-                                    PodList(podcasts: albumsDior[4])
-                                }
-                                
-                            
-                            }
-                            .padding(.leading)
-                            .padding(.trailing)
-                        }
-                        //디올 show 문단 시작
-                        HStack{
-                            Text("Prada show")
-                                .font(.system(size: 25))
-                                .foregroundColor(.white)
-                                .fontWeight(.bold)
-                            Spacer()
-                        }
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(alignment: .top) {
-                                Button(action: {
-                                    // 버튼 클릭 시 실행할 액션을 여기에 추가 //
-                                    show.toggle()
-                                    seledctedAlbum =  albumsPrada[0]
-                                    
-                                }) {
-                                    PodList(podcasts: albumsPrada[0])
-                                }
-                                
-                                Button(action: {
-                                    show.toggle()
-                                    seledctedAlbum = albumsPrada[1]
-                                    
-                                    // 버튼 클릭 시 실행할 액션을 여기에 추가9999
-                                }) {
-                                    PodList(podcasts: albumsPrada[1])
-                                }
-                                
-                                Button(action: {
-                                    // 버튼 클릭 시 실행할 액션을 여기에 추가99999
-                                    show.toggle()
-                                    seledctedAlbum =  albumsPrada[2]
-                                }) {
-                                    PodList(podcasts: albumsPrada[2])
-                                }
-                                
-                                Button(action: {
-                                    // 버튼 클릭 시 실행할 액션을 여기에 추가9999
-                                    show.toggle()
-                                    seledctedAlbum =  albumsPrada[3]
-                                }) {
-                                    PodList(podcasts: albumsPrada[3])
-                                }
-                                
-                                Button(action: {
-                                    // 버튼 클릭 시 실행할 액션을 여기에 추가
-                                    show.toggle()
-                                    seledctedAlbum =  albumsPrada[4]
-                                }) {
-                                    PodList(podcasts: albumsPrada[4])
-                                }
-                                
-                            
-                            }
-                            .padding(.leading)
-                            .padding(.trailing)
-                        }
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHGrid(rows: [GridItem(.flexible(minimum: 200))], spacing: 5) {
-                                ForEach(albums, id: \.id) { album in
+                                ForEach(fashionShowListDior, id: \.id) { album000 in
                                         Button(action: {
                                             withAnimation(.easeIn) {
                                                 
-                                                seledctedAlbum =  album
+                                                selectedFashionShow =  album000
 //                                                selectedYoutube =  album.youtubeURL
                                                 //album.youtubeID
     
                                                 show.toggle()
                                                 
                                                 // Handle the button tap here
-                                                print("Tapped on \(album.albumShowTitle)")
+                                                print("Tapped on \(album000)")
                                             }
                                         }) {
-                                            AlbumList(albums: album)
+                                            AlbumList000(albums000: album000)
+                                        }
+                                    }
+                                }
+                          //  }
+                            .padding(.leading)
+                            .padding(.trailing)
+                           
+                        }
+                        .padding(.bottom,30)
+
+                        HStack{
+                            Text("YSL show")
+                                .padding(.leading,10)
+                                .font(.system(size: 25))
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                            Spacer()
+                        }.padding(.bottom,-10)
+                        HStack{
+//                            Image(mainAlbums.artistImage)
+                            Image("안토니 바카렐로.압생로랑")
+                                .resizable()
+                                .clipShape(Circle())
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50)
+                            VStack(alignment: .leading){
+                                Text("MORE LIKE")
+                                    .font(.system(size:10))
+                                    .tracking(1)
+                                    .foregroundColor(.white)
+                                    .font(.caption)
+                                
+                                Text("안토니 바카렐로")
+                              //  Text(mainAlbums.artistName)
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 25))
+                                    .fontWeight(.bold)
+                            }
+                            Spacer()
+                        }
+                        .padding()
+                        
+                        .padding(.bottom,-10)
+                        
+                        // 새로운 배열 ⛑️⛑️⛑️🧯
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            LazyHGrid(rows: [GridItem(.flexible(minimum: 200))], spacing: 5) {
+                                ForEach(fashionShowListYSL, id: \.id) { album000 in
+                                        Button(action: {
+                                            withAnimation(.easeIn) {
+                                                
+                                                selectedFashionShow =  album000
+//                                                selectedYoutube =  album.youtubeURL
+                                                //album.youtubeID
+    
+                                                show.toggle()
+                                                
+                                                // Handle the button tap here
+                                                print("Tapped on \(album000)")
+                                            }
+                                        }) {
+                                            AlbumList000(albums000: album000)
+                                        }
+                                    }
+                                }
+                          //  }
+                            .padding(.leading)
+                            .padding(.trailing)
+                           
+                        }
+                        .padding(.bottom,30)
+                        
+                        HStack{
+                            Text("BURBERRY show")
+                                .padding(.leading,10)
+                                .font(.system(size: 25))
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                            Spacer()
+                        }.padding(.bottom,-10)
+                        HStack{
+//                            Image(mainAlbums.artistImage)
+                            Image("다니엘 리-버버리")
+                                .resizable()
+                                .clipShape(Circle())
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50)
+                            VStack(alignment: .leading){
+                                Text("MORE LIKE")
+                                    .font(.system(size:10))
+                                    .tracking(1)
+                                    .foregroundColor(.white)
+                                    .font(.caption)
+                                
+                                Text("다니엘 리")
+                              //  Text(mainAlbums.artistName)
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 25))
+                                    .fontWeight(.bold)
+                            }
+                            Spacer()
+                        }
+                        .padding()
+                        .padding(.bottom,-10)
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            LazyHGrid(rows: [GridItem(.flexible(minimum: 200))], spacing: 5) {
+                                ForEach(fashionShowListBURBERRY, id: \.id) { album000 in
+                                        Button(action: {
+                                            withAnimation(.easeIn) {
+                                                
+                                                selectedFashionShow =  album000
+//                                                selectedYoutube =  album.youtubeURL
+                                                //album.youtubeID
+    
+                                                show.toggle()
+                                                
+                                                // Handle the button tap here
+                                                print("Tapped on \(album000)")
+                                            }
+                                        }) {
+                                            AlbumList000(albums000: album000)
+                                        }
+                                    }
+                                }
+                          //  }
+                            .padding(.leading)
+                            .padding(.trailing)
+                        }.padding(.bottom,30)
+                        HStack{
+                            Text("PRADA show")
+                                .padding(.leading,10)
+                                .font(.system(size: 25))
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                            Spacer()
+                        }.padding(.bottom,-10)
+                        .padding(.bottom,-10)
+                        HStack{
+//                            Image(mainAlbums.artistImage)
+                           // Image("프라다-라프시몬스")
+                            Image("User1")
+                                .resizable()
+                                .clipShape(Circle())
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50)
+                            VStack(alignment: .leading){
+                                Text("MORE LIKE")
+                                    .font(.system(size:10))
+                                    .tracking(1)
+                                    .foregroundColor(.white)
+                                    .font(.caption)
+                                
+                                Text("라프 시몬스")
+                              //  Text(mainAlbums.artistName)
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 25))
+                                    .fontWeight(.bold)
+                            }
+                            Spacer()
+                        }
+                        .padding()
+                        .padding(.bottom,-10)
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            LazyHGrid(rows: [GridItem(.flexible(minimum: 200))], spacing: 5) {
+                                ForEach(fashionShowListPRADA, id: \.id) { album000 in
+                                        Button(action: {
+                                            withAnimation(.easeIn) {
+                                                
+                                                selectedFashionShow =  album000
+//                                                selectedYoutube =  album.youtubeURL
+                                                //album.youtubeID
+    
+                                                show.toggle()
+                                                
+                                                // Handle the button tap here
+                                                print("Tapped on \(album000)")
+                                            }
+                                        }) {
+                                            AlbumList000(albums000: album000)
                                         }
                                     }
                                 }
@@ -392,11 +504,10 @@ struct HomeViewW: View {
                             .padding(.leading)
                             .padding(.trailing)
                         }
-                    
                     }
                     .padding(.bottom,200)
                 }
-            }
+            }.padding(.top,-30)
         }
     }
 }

@@ -32,7 +32,9 @@ struct PlanetView: View {
                // Text("CHANNEL")
                     .font(.headline)
                     .foregroundColor(.white)
+                   
                     .multilineTextAlignment(.center)
+                
             }
             
             HStack(spacing: 8){

@@ -121,3 +121,33 @@ var albumsBurberry: [Album] = [
     Album( albumImage: "Burberry Slay Show", albumShowTitle: fashionShowListPRADA[5].showTitle, artistImage: "다니엘 리-버버리", artistName: "다니엘 리", badge: true, year: "2020 ", date: "2023", songs: 0, time: "12시20분 ", copyright: " 공공공", youtubeID: fashionShowListPRADA[5].youtubeID, youtubeURL: fashionShowListPRADA[5].youtubeURL, showDetail: fashionShowListPRADA[5].showDetail),
     Album( albumImage: "Burberry Slay Show", albumShowTitle: fashionShowListPRADA[6].showTitle, artistImage: "다니엘 리-버버리", artistName: "다니엘 리", badge: true, year: "2020 ", date: "2023", songs: 0, time: "12시20분 ", copyright: " 공공공", youtubeID: fashionShowListPRADA[6].youtubeID, youtubeURL: fashionShowListPRADA[6].youtubeURL, showDetail: fashionShowListPRADA[6].showDetail),
 ]
+
+
+
+struct AlbumImageSET : Identifiable{
+    var id: Int
+    var albumImage: String
+    
+    
+}
+
+var albumImageChanel: [AlbumImageSET] = [
+AlbumImageSET(id: 0, albumImage: "Chanel Slay Show")
+]
+var albumImageGucci: [AlbumImageSET] = [
+AlbumImageSET(id: 0, albumImage: "GUCCI Slay Show 1")
+]
+var albumImageDior: [AlbumImageSET] = [
+AlbumImageSET(id: 0, albumImage: "DIOR Slay Show")
+]
+
+var albumImagePrada: [AlbumImageSET] = [
+AlbumImageSET(id: 0, albumImage: "PRADA Slay Show")
+]
+var albumImageBurberry: [AlbumImageSET] = [
+AlbumImageSET(id: 0, albumImage: "Burberry Slay Show")
+]
+
+var albumImageYSL: [AlbumImageSET] = [
+AlbumImageSET(id: 0, albumImage: "YSL Slay Show")
+]
