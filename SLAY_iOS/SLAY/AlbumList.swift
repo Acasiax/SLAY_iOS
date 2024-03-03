@@ -55,7 +55,7 @@ struct AlbumList000: View {
     var albums000 : FashionShow
     var body: some View {
         ZStack(alignment:.leading){
-            Color.black
+            Color.clear
                 .ignoresSafeArea ()
             VStack(alignment: .leading){
                 Image(albums000.albumImage)
